@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="MyApp">
+  
+  <header class="header">
+    <div class="header__container container">
+      <a href="#" class="header__logo">LOGO</a>
+      <ul class="header__btns">
+        <li class="header__btns-item">
+          <a href="#" class="header__btn">
+            <img src="img/person.svg" alt="" class="icon">
+          </a>
+        </li>
+        <li class="header__btns-item">
+          <a href="#" class="header__btn">
+            <img src="img/favorite.svg" alt="" class="icon">
+            <span class="header__btn-count" v-if="productsWish.length">{{productsWish.length}}</span>
+          </a>
+          <div class="header__min-cart min-cart" v-if="productsWish.length">
+            <a href="#" class="min-cart__item" v-for="(element, index) in productsWish" v-if="">
+              <img src="img/14896420-1 1.png" alt="" class="min-cart__img">
+              <span class="min-cart__title">{{element.title}}</span>
+              <span class="min-cart__count">{{element.count}}</span>
+              <span class="min-cart__price">{{element.price}}</span>
+            </a>
+            <a href="#" class="min-cart__link" v-if="productsWish.length > 3">Смотреть все</a>
+            <a href="#" class="min-cart__btn">Оформить заказ</a>
+          </div>
+        </li>
+        <li class="header__btns-item">
+          <a href="#" class="header__btn">
+            <img src="img/bag.svg" alt="" class="icon">
+            <span class="header__btn-count" v-if="productsBag.length">{{productsBag.length}}</span>
+          </a>
+          <div class="header__min-cart min-cart" v-if="productsBag.length">
+            <a href="#" class="min-cart__item" v-for="(element, index) in productsBag" v-if="">
+              <img src="img/14896420-1 1.png" alt="" class="min-cart__img">
+              <span class="min-cart__title">{{element.title}}</span>
+              <span class="min-cart__count">{{element.count}}</span>
+              <span class="min-cart__price">{{element.price}}</span>
+            </a>
+            <a href="#" class="min-cart__link" v-if="productsBag.length > 3">Смотреть все</a>
+            <a href="#" class="min-cart__btn">Оформить заказ</a>
+          </div>
+        </li>
+        <li class="header__btns-item">
+          <div href="#" class="header__btn _menu">
+            <img src="img/menu.svg" alt="" class="icon">
+          </div>
+        </li>
+      </ul>
+      <div class="header__menu">
+        <a href="#" class="header__menu-link">Постельное белье</a>
+        <a href="#" class="header__menu-link">Одежда для дома</a>
+        <a href="#" class="header__menu-link">Одежда для улицы</a>
+        <a href="#" class="header__menu-link">Выход</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="product">
+    <div class="container">
+      <div class="product__image">
+        <img src="img/14896420-2 1.png" alt="" class="product__image-img js-image">
+        <div class="product__image-slider">
+          <a href="img/14896420-2 2.png" class="product__image-slide _active">
+            <img src="img/14896420-2 2.png" alt="" class="product__image-min-img">
+          </a>
+          <a href="img/14896420-1 1.png" class="product__image-slide">
+            <img src="img/14896420-1 1.png" alt="" class="product__image-min-img">
+          </a>
+          <a href="img/14896420-3 1.png" class="product__image-slide">
+            <img src="img/14896420-3 1.png" alt="" class="product__image-min-img">
+          </a>
+          <a href="img/14896420-4 1.png" class="product__image-slide">
+            <img src="img/14896420-4 1.png" alt="" class="product__image-min-img">
+          </a>
+          <a href="img/14896420-5 1.png" class="product__image-slide">
+            <img src="img/14896420-5 1.png" alt="" class="product__image-min-img">
+          </a>
+        </div>
+      </div>
+      <div class="product__info">
+        <div class="product__header">
+          <h1 class="product__title js-title">Пижама для девочек</h1>
+          <p class="product__subtitle">Арт. 02765/46</p>
+          <a href="" class="product__reviews">
+            <span class="product__reviews-text">Отзывы</span>
+            <span class="product__reviews-rating rating">
+              <span class="rating__star _filled"></span>
+              <span class="rating__star _filled"></span>
+              <span class="rating__star _filled"></span>
+              <span class="rating__star _filled"></span>
+              <span class="rating__star"></span>
+            </span>
+            <span class="product__reviews-text">14 отзывов</span>
+          </a>
+          <div class="product__price">
+            <p class="product__price-new js-price">800 ₽</p>
+            <p class="producr__price-old">1 500 ₽</p>
+          </div>
+          <div class="product__price-sales">
+            <p class="product__price-sale">скидка -36%</p>
+            <p class="product__price-sale">акция -20%</p>
+          </div>
+          <select class="product__size-select">
+            <option value="1 ">Выбрать размер</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <a href="" class="product__link">Определить размер</a>
+          <div class="product__btns">
+            <div class="product__input">
+              <div class="product__input-btn js-plus">+</div>
+              <input readonly class="product__input-field js-input" min="1" max="10" value="2">
+              <div class="product__input-btn js-minus">-</div>
+            </div>
+            <a href="#popup-succes" class="product__btn js-add js-add-bag" v-on:click="addBag">Добавить в корзину</a>
+            <a href="#popup-succes" class="product__btn _with-icon js-add js-add-wishlist" v-on:click="addWish">
+              <img src="img/favorite_white.svg" alt="" class="product__btn-icon icon">
+            </a>
+          </div>
+          <a href="#" class="product__link">Купить в 1 клик</a>
+        </div>
+        <div class="product__footer">
+          <div class="product__item">
+            <img src="img/Closes.svg" alt="" class="icon _small">
+            <a href="#" class="product__link">Описание товара</a>
+          </div>
+          <div class="product__item">
+            <img src="img/clock.svg" alt="" class="icon _small">
+            <a href="#" class="product__link">Доставка и возврат</a>
+          </div>
+          <div class="product__item">
+            <img src="img/pay.svg" alt="" class="icon _small">
+            <a href="#" class="product__link">Способы оплаты</a>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="product__link _center">Посмотреть все стили</a>
+    </div>
+  </section>
+
+  <section class="similar-product">
+    <div class="container">
+      <a href="#" class="similar-product__item _big" style="background-image: url('img/Group-4.png');">
+        <span class="similar-product__item-content">
+          <img src="img/full_screen_white.svg" alt="" class="similar-product__item-btn icon">
+          <span class="similar-product__item-info">
+            <img src="img/bag_white.svg" alt="" class="similar-product__item-icon icon">
+            <span class="similar-product__item-text">Узнай, что на мне</span>
+          </span>
+          <span class="similar-product__item-like">
+            <img src="img/favorite_white.svg" alt="" class="icon _small">
+            <span class="similar-product__item-likes">200</span>
+          </span>
+        </span>
+      </a>
+      <a href="#" class="similar-product__item" style="background-image: url('img/Group.png');">
+        <span class="similar-product__item-content">
+          <img src="img/full_screen_white.svg" alt="" class="similar-product__item-btn">
+          <span class="similar-product__item-info">
+            <img src="img/bag_white.svg" alt="" class="similar-product__item-icon icon">
+            <span class="similar-product__item-text">Узнай, что на мне</span>
+          </span>
+          <span class="similar-product__item-like">
+            <img src="img/favorite_white.svg" alt="" class="icon _small">
+            <span class="similar-product__item-likes">200</span>
+          </span>
+        </span>
+      </a>
+      <a href="#" class="similar-product__item" style="background-image: url('img/Group-1.png');">
+        <span class="similar-product__item-content">
+          <img src="img/full_screen_white.svg" alt="" class="similar-product__item-btn">
+          <span class="similar-product__item-info">
+            <img src="img/bag_white.svg" alt="" class="similar-product__item-icon icon">
+            <span class="similar-product__item-text">Узнай, что на мне</span>
+          </span>
+          <span class="similar-product__item-like">
+            <img src="img/favorite_white.svg" alt="" class="icon _small">
+            <span class="similar-product__item-likes">200</span>
+          </span>
+        </span>
+      </a>
+      <a href="#" class="similar-product__item" style="background-image: url('img/Group-2.png');">
+        <span class="similar-product__item-content">
+          <img src="img/full_screen_white.svg" alt="" class="similar-product__item-btn">
+          <span class="similar-product__item-info">
+            <img src="img/bag_white.svg" alt="" class="similar-product__item-icon icon">
+            <span class="similar-product__item-text">Узнай, что на мне</span>
+          </span>
+          <span class="similar-product__item-like">
+            <img src="img/favorite_white.svg" alt="" class="icon _small">
+            <span class="similar-product__item-likes">200</span>
+          </span>
+        </span>
+      </a>
+      <a href="#" class="similar-product__item" style="background-image: url('img/Group-3.png');">
+        <span class="similar-product__item-content">
+          <img src="img/full_screen_white.svg" alt="" class="similar-product__item-btn">
+          <span class="similar-product__item-info">
+            <img src="img/bag_white.svg" alt="" class="similar-product__item-icon icon">
+            <span class="similar-product__item-text">Узнай, что на мне</span>
+          </span>
+          <span class="similar-product__item-like">
+            <img src="img/favorite_white.svg" alt="" class="icon _small">
+            <span class="similar-product__item-likes">200</span>
+          </span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__breake"></div>
+      <div class="footer__column">
+        <p class="footer__title">Покупателям</p>
+        <a href="#" class="footer__link">Каталог</a>
+        <a href="#" class="footer__link">Акции</a>
+        <a href="#" class="footer__link">Бренды</a>
+      </div>
+      <div class="footer__column">
+        <p class="footer__title">О нас</p>
+        <a href="#" class="footer__link">О компании</a>
+        <a href="#" class="footer__link">Новости</a>
+        <a href="#" class="footer__link">Команда</a>
+      </div>
+      <form class="footer__mailing">
+        <p class="footer__title">Узнайте первыми о новинках и акциях</p>
+        <input type="email" class="footer__input" placeholder="Адрес электронной почты">
+        <span class="footer__input-error">Введите коректный email</span>
+        <button type="submit" class="footer__btn submit">Подписаться</button>
+      </form>
+    </div>
+  </footer>
+
+  <div class="popup" id="popup-succes">
+    <div class="popup__content">
+      <div class="popup__btn-close"></div>
+      <p class="popup__title">Товар добавлен</p>
+      <p class="popup__text">Товар <span class="js-product-name"></span> в количестве <span class="js-product-count"></span> единиц добавлен в <span class="js-product-target"></span></p>
+    </div>
+  </div>
+
+  <div class="popup" id="popup-send">
+    <div class="popup__content">
+      <div class="popup__btn-close"></div>
+      <p class="popup__title">Вы подписались</p>
+      <p class="popup__text">Благодарим, за подписку.</p>
+    </div>
+  </div>
+
+  <div class="scripts">
+    <script src="https://unpkg.com/vue@next"></script> 
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/app.js"></script>
+  </div>
+
+</body>
+</html>
